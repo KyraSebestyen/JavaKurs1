@@ -13,7 +13,7 @@ public class UserInterface {
 
     public void start() {
         readPoints();
-        System.out.println("");
+        System.out.println();
         printGradeDistribution();
     }
 
@@ -25,7 +25,7 @@ public class UserInterface {
                 break;
             }
 
-            int points = Integer.valueOf(input);
+            int points = Integer.parseInt(input);
 
             if (points < 0 || points > 100) {
                 System.out.println("Impossible number.");
@@ -37,15 +37,20 @@ public class UserInterface {
     }
 
     public void printGradeDistribution() {
+        for (Integer points : this.register.getPoints()) {
+            System.out.println("Points: " + points);
+        }
         int grade = 5;
         while (grade >= 0) {
             int stars = register.numberOfGrades(grade);
             System.out.print(grade + ": ");
             printsStars(stars);
-            System.out.println("");
+            System.out.println();
 
             grade = grade - 1;
         }
+        System.out.println("The average of points: " + this.register.averageOfPoints());
+        System.out.println("The average of grades: " + this.register.averageOfGrades());
         
     }
 

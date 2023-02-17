@@ -1,15 +1,21 @@
 
 import fi.helsinki.cs.tmc.edutestutils.MockStdio;
 import fi.helsinki.cs.tmc.edutestutils.Points;
+
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+
 import static org.junit.Assert.assertFalse;
+
 import org.junit.Test;
+
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
 import org.junit.Rule;
 
 public class RecipeSearchTest {
@@ -101,9 +107,9 @@ public class RecipeSearchTest {
                 continue;
             }
 
-            assertTrue("Expected the output to contain the string " + expected 
-                    + ".\nWhen the contents of the file are:\n" + byRows(fileContents) 
-                    + "\nTest the program with the commands:\n" + commands + ".", print.contains(expected));
+            assertTrue("Expected the output to contain the string " + expected
+                       + ".\nWhen the contents of the file are:\n" + byRows(fileContents)
+                       + "\nTest the program with the commands:\n" + commands + ".", print.contains(expected));
         }
 
         for (String notExpected : notExpectedPrints) {
@@ -111,9 +117,9 @@ public class RecipeSearchTest {
                 continue;
             }
 
-            assertFalse("Expected that the output would not contain the string " + notExpected 
-                    + ".\nWhen the contents of the file are:\n" + byRows(fileContents) +
-                    "\nTest the program with the commands:\n" + commands + ".", print.contains(notExpected));
+            assertFalse("Expected that the output would not contain the string " + notExpected
+                        + ".\nWhen the contents of the file are:\n" + byRows(fileContents) +
+                        "\nTest the program with the commands:\n" + commands + ".", print.contains(notExpected));
         }
 
         try {

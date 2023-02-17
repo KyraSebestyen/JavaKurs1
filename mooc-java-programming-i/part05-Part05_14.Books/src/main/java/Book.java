@@ -17,4 +17,16 @@ public class Book {
         return publicationYear;
     }
 
+    @Override
+    public boolean equals(Object compared) {
+        if (compared == this) {
+            return true;
+        }
+        if (!(compared instanceof Book)) {
+            return false;
+        }
+        Book comparedBook = (Book) compared;
+        return (this.name.equals(comparedBook.name) &&
+                this.publicationYear == comparedBook.publicationYear);
+    }
 }
