@@ -1,0 +1,6 @@
+hauskaa:fun
+alla oleva:below
+määrä:number
+apina:monkey
+olut:beer
+testata:test
