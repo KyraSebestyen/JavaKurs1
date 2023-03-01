@@ -7,16 +7,13 @@ public class MagicSquare {
 
     private int[][] square;
 
-    // ready constructor
     public MagicSquare(int size) {
         if (size < 2) {
             size = 2;
         }
-
         this.square = new int[size][size];
     }
 
-    // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
         ArrayList<Integer> sumsOfRows = new ArrayList<>();
         for (int row = 0; row < this.square.length; row++) {

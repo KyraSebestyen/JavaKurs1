@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Program {
 
     public static void main(String[] args) {
-        MagicSquare square = new MagicSquare(3);
+        /*MagicSquare square = new MagicSquare(3);
         square.placeValue(0,0,1);
         square.placeValue(1,0,1);
         square.placeValue(2,0,1);
@@ -23,9 +23,9 @@ public class Program {
 
         ArrayList<Integer> diagonalSums = square.sumsOfDiagonals();
         System.out.println("Diagonal sums");
-        diagonalSums.forEach(System.out::println);
+        diagonalSums.forEach(System.out::println);*/
 
-       // MagicSquareFactory msFactory = new MagicSquareFactory();
-       // System.out.println(msFactory.createMagicSquare(5));
+       MagicSquareFactory msFactory = new MagicSquareFactory();
+       System.out.println(msFactory.createMagicSquare(5));
     }
 }
