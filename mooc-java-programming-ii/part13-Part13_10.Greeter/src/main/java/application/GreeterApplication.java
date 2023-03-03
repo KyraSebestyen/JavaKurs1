@@ -35,7 +35,7 @@ public class GreeterApplication extends Application {
         startButton.setOnAction((event) -> {
             final BorderPane secondLayout = new BorderPane();
             final Scene secondView = new Scene(secondLayout);
-            secondLayout.setCenter(new Label("Welcome " + nameField.getText()));
+            secondLayout.setCenter(new Label("Welcome " + nameField.getText() + "!"));
             primaryStage.setScene(secondView);
         });
 
