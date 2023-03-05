@@ -1,19 +1,21 @@
 package application;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
-public class InputView extends Application {
-    private final Dictionary dictionary = new Dictionary();
-    @Override
-    public void start(Stage primaryStage) {
+public class InputView {
+    private final Dictionary dictionary;
+
+    public InputView(Dictionary dictionary) {
+        this.dictionary = dictionary;
+    }
+
+    public Parent getView() {
         GridPane layout = styleGridPane();
 
         Label word = new Label("Word");
@@ -31,16 +33,12 @@ public class InputView extends Application {
             this.dictionary.addTranslation(wordField.getText(), translationField.getText());
             wordField.clear();
             translationField.clear();
-            dictionary.printAllTranslations();
         });
-
-        Scene scene = new Scene(layout);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        return layout;
     }
 
 
-    private GridPane styleGridPane() {
+    GridPane styleGridPane() {
         GridPane layout = new GridPane();
         layout.setAlignment(Pos.CENTER);
         layout.setVgap(10);
@@ -49,8 +47,4 @@ public class InputView extends Application {
         return layout;
     }
 
-    public static void main(String[] args) {
-        launch(InputView.class);
-
-    }
 }

@@ -3,8 +3,8 @@ package application;
 import java.util.*;
 
 public class Dictionary {
-    private Map<String, String> translations = new HashMap<>();
-    private List<String> words = new ArrayList<>();
+    private final Map<String, String> translations = new HashMap<>();
+    private final List<String> words = new ArrayList<>();
 
     public Dictionary() {
         addTranslation("Wort", "sana");
@@ -23,9 +23,7 @@ public class Dictionary {
         return words.get(index);
     }
 
-    public void printAllTranslations() {
-        translations.entrySet().stream()
-                .map(entrySet -> entrySet.getKey() + " -> " + entrySet.getValue())
-                .forEach(System.out::println);
+    public Map<String, String> getTranslations() {
+        return translations;
     }
 }
