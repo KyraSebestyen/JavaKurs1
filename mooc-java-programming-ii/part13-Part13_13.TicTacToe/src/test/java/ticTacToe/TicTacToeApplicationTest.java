@@ -39,7 +39,7 @@ public class TicTacToeApplicationTest extends ApplicationTest {
 
     @Override
     public void start(Stage stage) throws Exception {
-        TicTacToeApplication application = new TicTacToeApplication();
+        TicTacToeGUI application = new TicTacToeGUI();
 
         try {
             Application app = Application.class.cast(application);
@@ -48,7 +48,7 @@ public class TicTacToeApplicationTest extends ApplicationTest {
         }
 
         try {
-            Reflex.reflect(TicTacToeApplication.class).method("start").returningVoid().taking(Stage.class).invokeOn(application, stage);
+            Reflex.reflect(TicTacToeGUI.class).method("start").returningVoid().taking(Stage.class).invokeOn(application, stage);
         } catch (Throwable ex) {
             fail("Make sure that the class TicTacToeApplication has the method start that receives a Stage object as a parameter. If this is the case, make sure that the method works as inteded. The error: " + ex.getMessage());
         }

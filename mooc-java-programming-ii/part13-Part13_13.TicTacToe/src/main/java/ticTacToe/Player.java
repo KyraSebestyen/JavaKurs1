@@ -7,7 +7,7 @@ public class Player {
         this.sign = sign;
     }
 
-    boolean attemptMove() {
-        return true;
+    public enum TicTacToeSign {
+        X, O
     }
 }

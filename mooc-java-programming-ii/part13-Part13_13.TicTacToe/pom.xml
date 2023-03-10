@@ -135,7 +135,7 @@
                         <artifactId>javafx-maven-plugin</artifactId>
                         <version>0.0.2</version>
                         <configuration>
-                            <mainClass>ticTacToe.TicTacToeApplication</mainClass>
+                            <mainClass>ticTacToe.TicTacToeGUI</mainClass>
                         </configuration>
                     </plugin>
                 </plugins>
